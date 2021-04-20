@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_desing/components/side_menu_items.dart';
 import 'package:responsive_desing/components/tags.dart';
-import 'package:responsive_desing/defendencies/websafe.dart';
 import 'package:websafe_svg/websafe_svg.dart';
 import '../constant.dart';
 import 'package:flutter/foundation.dart' show vIsWeb;
@@ -16,9 +15,13 @@ class SideMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(   gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          stops: [0.3,1],
+          colors: [Colors.green, Colors.blue])),
       height: double.infinity,
       padding: EdgeInsets.only(top: vIsWeb ? vDefaultPadding : 0),
-      color: vBgLightColor,
       child: SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: vDefaultPadding),
@@ -36,20 +39,27 @@ class SideMenu extends StatelessWidget {
                 ],
               ),
               SizedBox(height: vDefaultPadding),
-              FlatButton.icon(
-                minWidth: double.infinity,
-                padding: EdgeInsets.symmetric(
-                  vertical: vDefaultPadding,
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                color: vPrimaryColor,
-                onPressed: () {},
-                icon: WebsafeSvg.asset("assets/Icons/Edit.svg", width: 16),
-                label: Text(
-                  "New message",
-                  style: TextStyle(color: Colors.white),
+              Container(
+                decoration: BoxDecoration(   gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    stops: [0.3,1],
+                    colors: [Colors.tealAccent, Colors.blue])),
+                child: FlatButton.icon(
+                  minWidth: double.infinity,
+                  padding: EdgeInsets.symmetric(
+                    vertical: vDefaultPadding,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  // color: vPrimaryColor,
+                  onPressed: () {},
+                  icon: WebsafeSvg.asset("assets/Icons/Edit.svg", width: 16),
+                  label: Text(
+                    "New message",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
               //     .addNeumorphism(
@@ -57,20 +67,27 @@ class SideMenu extends StatelessWidget {
               //   bottomShadowColor: Color(0xFF234395).withOpacity(0.2),
               // ),
               SizedBox(height: vDefaultPadding),
-              FlatButton.icon(
-                minWidth: double.infinity,
-                padding: EdgeInsets.symmetric(
-                  vertical: vDefaultPadding,
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                color: vBgDarkColor,
-                onPressed: () {},
-                icon: WebsafeSvg.asset("assets/Icons/Download.svg", width: 16),
-                label: Text(
-                  "Get messages",
-                  style: TextStyle(color: Colors.white),
+              Container(
+                decoration: BoxDecoration(   gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    stops: [0.3,1],
+                    colors: [Colors.tealAccent, Colors.blue])),
+                child: FlatButton.icon(
+                  minWidth: double.infinity,
+                  padding: EdgeInsets.symmetric(
+                    vertical: vDefaultPadding,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  color: vBgDarkColor,
+                  onPressed: () {},
+                  icon: WebsafeSvg.asset("assets/Icons/Download.svg", width: 16),
+                  label: Text(
+                    "Get messages",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
                   // .addNeumorphism(),

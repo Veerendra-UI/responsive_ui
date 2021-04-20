@@ -30,8 +30,13 @@ class _ListofmailsState extends State<Listofmails> {
         child: SideMenu(),
       ),
       body: Container(
+        decoration: BoxDecoration(   gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            stops: [0.3,1],
+            colors: [Colors.green, Colors.blue])),
         padding: EdgeInsets.only(top: vIsWeb ? vDefaultPadding: 0),
-        color: vBgDarkColor,
+        // color: vBgDarkColor,
         child: SafeArea(
           right: false,
           child: Column(
@@ -48,23 +53,22 @@ class _ListofmailsState extends State<Listofmails> {
                     ),
                   if (!Responsive.isDesktop(context)) SizedBox(width: 5),
                   Expanded(
-                    child: TextField(
-                      onChanged: (value) {},
-                      decoration: InputDecoration(
-                        hintText: "Search",
-                        fillColor: vBgLightColor,
-                        filled: true,
-                        suffixIcon: Padding(
-                          padding: const EdgeInsets.all(
-                              vDefaultPadding * 0.75), //15
-                          child: WebsafeSvg.asset(
-                            "assets/Icons/Search.svg",
-                            width: 24,
+                    child: Container(
+                      decoration: BoxDecoration(   gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          stops: [0.3,1],
+                          colors: [Colors.green, Colors.blue])),
+                      child: TextField(
+                        onChanged: (value) {},
+                        decoration: InputDecoration(
+                          hintText: "Search",
+                          // fillColor: vBgLightColor,
+                          filled: true,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            borderSide: BorderSide.none,
                           ),
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          borderSide: BorderSide.none,
                         ),
                       ),
                     ),
@@ -88,15 +92,15 @@ class _ListofmailsState extends State<Listofmails> {
                       "Sort by date",
                       style: TextStyle(fontWeight: FontWeight.w500),
                     ),
-                    // Spacer(),
-                    // MaterialButton(
-                    //   minWidth: 20,
-                    //   onPressed: () {},
-                    //   child: WebsafeSvg.asset(
-                    //     "assets/Icons/Sort.svg",
-                    //     width: 16,
-                    //   ),
-                    // ),
+                    Spacer(),
+                    MaterialButton(
+                      minWidth: 20,
+                      onPressed: () {},
+                      child: WebsafeSvg.asset(
+                        "assets/Icons/Sort.svg",
+                        width: 16,
+                      ),
+                    ),
                   ],
                 ),
               ),

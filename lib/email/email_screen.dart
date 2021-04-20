@@ -18,7 +18,11 @@ class EmailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Color(0xFFf9e4ad),
+        decoration: BoxDecoration(   gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            stops: [0.3,1],
+            colors: [Colors.green, Colors.blue])),
         child: SafeArea(
           child: Column(
             children: [
@@ -50,29 +54,22 @@ class EmailScreen extends StatelessWidget {
                                       Text.rich(
                                         TextSpan(
                                           text: emails[1].name,
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .button,
+                                          style: Theme.of(context).textTheme.button,
                                           children: [
                                             TextSpan(
-                                                text:
-                                                "  <veeruhullatti@gmail.com> to Shivu .",
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .caption),
+                                                text: " <veeruhullatti@gmail.com> to Shivu .",
+                                                style: Theme.of(context).textTheme.caption),
                                           ],
                                         ),
                                       ),
                                       Text(
                                         "Inspiration for our new home",
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .headline6,
+                                        style: Theme.of(context).textTheme.headline6,
                                       )
                                     ],
                                   ),
                                 ),
-                                SizedBox(width: vDefaultPadding / 2),
+                                SizedBox(width: vDefaultPadding ),
                                 Text(
                                   "Today at 15:32",
                                   style: Theme.of(context).textTheme.caption,
@@ -82,17 +79,15 @@ class EmailScreen extends StatelessWidget {
                             SizedBox(height: vDefaultPadding),
                             LayoutBuilder(
                               builder: (context, constraints) => SizedBox(
-                                width: constraints.maxWidth > 850
-                                    ? 800
-                                    : constraints.maxWidth,
+                                width: constraints.maxWidth > 850 ? 800 : constraints.maxWidth,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      "Hello my love, \n \nThe more powerful the customer’s fantasy of owning the product, the more likely they are to buy it. Therefore, I like to think of product descriptions as storytelling and psychology, incorporating the elements of both prose writing and journalism. A “good” product description will not do. Competition is getting too fierce. It must be great!. \n \nLove you, \n\nElvia",
+                                      "Hello my love, \n \n \n   The more powerful the customer’s fantasy of owning the product, the more likely they are to buy it. Therefore, I like to think of product descriptions as storytelling and psychology, incorporating the elements of both prose writing and journalism. A “good” product description will not do. Competition is getting too fierce. It must be great!. \n \n \nLove you, \n \n \n ab de villiers",
                                       style: TextStyle(
                                         height: 1.5,
-                                        color: Colors.white,
+                                        color: Color(0xFF4D5875),
                                         fontWeight: FontWeight.w300,
                                       ),
                                     ),
@@ -100,7 +95,7 @@ class EmailScreen extends StatelessWidget {
                                     Row(
                                       children: [
                                         Text(
-                                          "6 attachments",
+                                          "3 attachments",
                                           style: TextStyle(fontSize: 12),
                                         ),
                                         Spacer(),
@@ -109,6 +104,7 @@ class EmailScreen extends StatelessWidget {
                                           style: Theme.of(context)
                                               .textTheme
                                               .caption,
+
                                         ),
                                         SizedBox(width: vDefaultPadding / 4),
                                         WebsafeSvg.asset(
